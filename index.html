@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <title>Chat ItrA</title>
     <style>
         body{
@@ -38,7 +39,9 @@
 			</div>
 			<div class="col-6">
 				<h3>Conversation</h3>
-				<div id="all_mess"></div>
+				<div id="all_mess">
+                    
+                </div>
 			</div>
 		</div>
 	</div>
@@ -75,7 +78,6 @@
 		$(function() {
 			
 			let socket = io.connect();
-			
 			let $form = $("#messForm"); 
 			let $name = $("#name"); 
 			let $textarea = $("#message"); 
@@ -92,10 +94,12 @@
 
 			
 			socket.on('add mess', function(data) {
-				$all_messages.append("<div class='alert alert-" + data.className + "'><b>" + data.name + "</b>: " + data.mess + "</div>");
+				$all_messages.append("<div class='alert alert-" + data.className + "'><b>" + data.name + "</b>: " + data.mess + "  </div>" "<i class="fas fa-edit"></i>");
 			});
 
 		});
 	</script>
 </body>
+
+
 </html>

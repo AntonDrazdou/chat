@@ -20,6 +20,10 @@ io.sockets.on('connection', function (socket) {
     socket.on('disconnect', function (data) {
         connections.splice(connections.indexOf(socket), 1);
         console.log("offline");
+    });
+
+    socket.on('send mess', function (data) {
+        io.sockets.emit('add mess', {mess: data.mess, name: data.name, className: data.className });
     })
 
 })
