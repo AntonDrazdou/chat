@@ -10,6 +10,21 @@
         body{
             background: #fcfcfc;
         }
+
+        b{
+            flex-grow: 1;
+
+        }
+        .alert-secondary{
+            display: flex;
+        }
+
+        .fa-edit{
+            margin-left: auto;
+        }
+
+        
+        
     </style>
 </head>
 <body>
@@ -94,7 +109,7 @@
 
 			
 			socket.on('add mess', function(data) {
-				$all_messages.append("<div class='alert alert-" + data.className + "'><b>" + data.name + "</b>: " + data.mess + "  </div>" "<i class="fas fa-edit"></i>");
+				$all_messages.append("<div class='alert alert-" + data.className + "'><b>" + data.name + "</b>: " + data.mess + " <i class='fas fa-edit'></i> <i class='fas fa-trash-alt'></i> </div>");
 			});
 
 		});
